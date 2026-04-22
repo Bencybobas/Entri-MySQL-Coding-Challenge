@@ -1,0 +1,80 @@
+-- create database week13;
+use week13;
+-- /* Employee */ 
+-- CREATE TABLE Employee ( 
+-- Employee_id int AUTO_INCREMENT PRIMARY KEY, 
+-- First_name VARCHAR(50), 
+-- Last_name VARCHAR(50), 
+-- Salary int, 
+-- Joining_date Date, 
+-- Departement  VARCHAR(50)  
+-- ); 
+-- /* reward */ 
+-- CREATE TABLE reward ( 
+-- Employee_ref_id int, 
+-- date_reward Date, 
+-- amount int, 
+-- FOREIGN KEY (Employee_ref_id) REFERENCES Employee(Employee_id) 
+-- ); 
+-- /* table Employee */ 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (1, 'Bob', 'Kinto', 1000000, "2019-01-20", "Finance"); 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (2, 'Jerry', 'Kansxo', 6000000, "2019-01-15", "IT"); 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (3, 'Philip', 'Jose', 8900000, "2019-02-05", "Banking"); 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (4, 'John', 'Abraham', 2000000, "2019-02-25", "Insurance"); 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (5, 'Michael', 'Mathew', 2200000, "2019-02-28", "Finance"); 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (6, 'Alex', 'chreketo', 4000000, "2019-05-10", "IT"); 
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, 
+-- Departement) VALUES (7, 'Yohan', 'Soso', 1230000, "2019-06-20", "Banking"); 
+-- /* table reward */ 
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (1, '2019-05-11', 
+-- '1000'); 
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (2, '2019-02-15', 
+-- '5000'); 
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (3, '2019-04-22', 
+-- '2000'); 
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (1, '2019-06-20', 
+-- '8000'); 
+-- select * from employee,reward;
+-- select first_name,length(first_name) from employee;
+-- select replace(first_name,'o','#') as firstname_replaced from employee;
+-- select concat(first_name,'_',last_name) as Name from employee;
+-- select year(joining_date),month(joining_date),day(joining_date) from employee;
+-- select *,first_name from employee order by first_name asc;
+-- select *,first_name from employee order by first_name desc;
+-- select * from employee order by first_name asc,salary desc;
+-- select * from employee where first_name='Bob';
+-- select first_name from employee where first_name in('Bob','Alex');
+-- select * from employee where first_name not in('Bob','Alex');
+-- select * from employee where first_name like 'b%';
+-- select * from employee where first_name like '%o%';
+-- select * from employee where first_name like '%n';
+-- select * from employee where first_name like '___n';
+-- select * from employee where first_name like 'j___';
+-- select * from employee where salary>3000000;
+-- select * from employee where salary<3000000;
+-- select * from employee where salary between 2000000 and 5000000;
+-- select * from employee where first_name in('Bob','Alex');
+-- select * from employee where year(joining_date)=2019;
+-- select * from employee where monthname(joining_date)='january';
+-- select * from employee where joining_date<'2019-03-01';
+-- select * from employee where joining_date>'2019-03-31';
+-- select date(joining_date) as enrollment_date,time(joining_date) as enrollment_time from employee;
+-- select date_format(joining_date,'%Y-%m-%d %H:%i:%s.%f') as membership_datetime from employee;
+-- select *,datediff(e.joining_date,r.date_reward) as datedifference from employee e join reward r 
+-- on e.employee_id=r.employee_ref_id;
+-- select current_timestamp();
+-- select first_name from employee where first_name like '%\%%';
+-- select last_name from employee;
+-- SELECT REGEXP_REPLACE(last_name, '[^a-zA-Z]', ' ') AS cleaned_last_name
+-- FROM employee;
+-- SELECT REPLACE(last_name, '[^a-zA-Z]', ' ') AS cleaned_last_name FROM employee;
+-- select departement,sum(salary) from employee group by departement;
+
+
+
